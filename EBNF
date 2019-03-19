@@ -1,0 +1,80 @@
+//Lexical Rules
+
+<letter> ::= a | b | c | d ... | z | A | B | C | D ...| Z 
+<symbol> ::= ? | / | _ ... | $ | & | ( | ) //special non-operation symbols on US keyboard
+<digit> ::= 1 | 2 | 3 .. | 9
+
+//Sintax rules
+
+//Identifier
+<identifier> ::= <letter> | _  {<letter> | <digit> | _ }
+
+//Instructions
+<line> ::= <instruction> | <function-declaration> .
+<instruction> ::= <asignment> | <function-call> | (<branch> | <loop> <instruction> {and <instruction>})
+
+//Asignments
+<asignment> ::= <put-asignment> | <swap-asignment> | <increase> | <decrease>
+<put-asignment> ::= put <value> in <identifier> .
+<swap-asignment> ::= swap <identifier> (for <value>) | (and <identifier>)
+<increase> ::= increase <identifier> | <numeric> by <numeric>
+<decrease> ::= decrease <identifier> | <numeric> by <numeric>
+
+//Values types
+<value> ::= <string-val> | <numeric> | <boolean> | <null-val> | <expression>
+<string-val> ::= " {[<letter> | <digit> | <symbol>]} "
+<numeric> ::= <integer> | <floating-point> | <hexa>
+<integer> ::= <digit> {<digit>}
+<floating-point> ::= {<digit>} . | , <digit> {<digit>}
+<hexa> ::= 0x <hexa-digit> {<hexa-digit>} 
+<hexa-digit> ::= <digit> | a | b | c | d | e | f 
+<boolean> ::= true | false
+<null-val> ::= null
+
+//Expression
+<expression> ::= <value> | <identifier> <operator> <value> | <identifier> //for now, no ( ), need to make multiple expressions
+<operator> ::= (plus)
+             | (minus)
+             | (times)
+             | (divided by)
+             | (squared by)
+             | (mod)
+             | (module) //mod and module are the same
+             | (bxor) //bitwise xor
+             | (bor)  //bitwise or
+             | (band) //bitwise and
+             
+
+
+//Branching
+<branch> ::= <if-statement> | <if-else-statement>
+<if-statement> ::= if <condition> then
+<if-else-statement> ::= <if-statement> <instruction> {and <instruction>} else 
+<condition> ::= <identifier> | <value> (<conditional-operator> <identifier> | <value>) | <check-operator>
+<conditional-operator> ::= (is [not] equal to) 
+                           | ([not] equals) 
+                           | (is [not] higher than) 
+                           | (is [not] lower than)
+                           
+<check-operator> ::=  (is [not] zero)
+                    | (is [not] higher than zero)
+                    | (is [not] even)  //checks that would be great to have
+                    | (is [not] a power of two)
+                    | (is [not] prime)
+
+//Looping
+<loop> ::= <while-loop>
+<while-loop> ::= while <condition> do
+
+//Functions
+<function-declaration> ::= to <identifier> [get <identifier> { and <identifier>}] then (<instruction> | <return>) {and (<instruction> | <return>)}
+<function-call> ::= do <identifier> [with <value> | <identifier> {and <value> | <identifier>}]
+<return> ::= return <value> | <identifier>
+
+
+
+
+
+
+
+

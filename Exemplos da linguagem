@@ -1,0 +1,88 @@
+
+
+a = 2
+b = 5
+c = a + b
+print(c)
+
+------------------
+
+put 2 in a.
+put 5 in b.
+put a plus b in c.
+print c.
+
+------------------
+
+a = "ola"
+if(a == "ola"):
+    a = "ola mesmo"
+else if (a == "Ola"):
+    a = "Ola com maiusculo"
+    b = "b tmb deve ter maiusculo" //might use a "then if" token for branching a if inside another one
+else:
+    a = "Not ola"
+print(a)
+
+-------------------------
+
+put "ola" in a.
+if a is equal to "ola" then
+swap a for "ola mesmo".                (swap can also swap two variables) (swap a for value: value is a generic value like a int or string. swap a and value: value is a variable)
+else if a is equal to "Ola" then
+swap a for "Ola com maiusculo" and   (o and eh eh muito importante, ele indica escopo do if)
+put "b tmb deve ter maiusculo" in b   (end de ifs antes de else nao tem . )
+else
+swap a for "Not ola".
+print a.
+
+-------------------------
+
+a = 1
+b = 0
+while (a < 100):
+    b += a
+    a += 1
+print(b)
+
+-------------------------
+
+put 1 in a.
+put 0 in b.
+while a is lower than 100 do
+swap b for a plus b and
+increase a by 1.
+print b.
+
+------------------------
+
+def func(arg1, arg2):
+    if(arg2 != 0):
+        arg1 = 10 ** arg2
+        if(arg1 > (10 ** 10)):
+            arg1 = (10 ** 10) - 500
+            return arg1
+        arg2 += 1
+        func(arg1,arg2)
+    return -1
+
+func(0,1)
+
+------------------------
+
+to func get arg1 and arg2 then (lembrando que identar eh uma opcao)
+if arg2 is not zero then
+swap arg1 for 10 squared by arg2 and
+if arg1 is higher than 10 squared by 10 then
+swap arg1 for 10 squared by 10 and
+swap arg1 for arg1 minus 500 and
+return arg1
+and
+increase arg2 by 1 and
+do func with arg1 and arg2.
+and
+return -1.
+
+do func with 0 and 1.
+    
+    
