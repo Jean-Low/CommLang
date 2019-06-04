@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/home/Jean_Low/insper/7sem/LogComp/Git/rot4/rot1.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

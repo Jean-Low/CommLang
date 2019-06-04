@@ -21,7 +21,7 @@
 <decrease> ::= decrease <identifier> | <numeric> by <numeric>
 
 //Values types
-<value> ::= <string-val> | <numeric> | <boolean> | <null-val> | <expression>
+<value> ::= <string-val> | <numeric> | <boolean> | <null-val> | <zero-val> | <expression>
 <string-val> ::= " {[<letter> | <digit> | <symbol>]} "
 <numeric> ::= <integer> | <floating-point> | <hexa>
 <integer> ::= <digit> {<digit>}
@@ -30,6 +30,7 @@
 <hexa-digit> ::= <digit> | a | b | c | d | e | f 
 <boolean> ::= true | false
 <null-val> ::= null
+<zero-vall> ::= zero
 
 //Expression
 <expression> ::= <value> | <identifier> <operator> <value> | <identifier> //for now, no ( ), need to make multiple expressions
@@ -51,7 +52,8 @@
 <if-statement> ::= if <condition> then
 <if-else-statement> ::= <if-statement> <instruction> {and <instruction>} else 
 <condition> ::= <identifier> | <value> (<conditional-operator> <identifier> | <value>) | <check-operator>
-<conditional-operator> ::= (is [not] equal to) 
+<conditional-operator> ::= (is [not] equal to)
+                           | (is) 
                            | ([not] equals) 
                            | (is [not] higher than) 
                            | (is [not] lower than)
@@ -67,7 +69,7 @@
 <while-loop> ::= while <condition> do
 
 //Functions
-<function-declaration> ::= to <identifier> [get <identifier> { and <identifier>}] then (<instruction> | <return>) {and (<instruction> | <return>)}
+<function-declaration> ::= to <identifier> [get <identifier> { and <identifier>}] do (<instruction> | <return>) {and (<instruction> | <return>)}
 <function-call> ::= do <identifier> [with <value> | <identifier> {and <value> | <identifier>}]
 <return> ::= return <value> | <identifier>
 
